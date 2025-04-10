@@ -27,6 +27,12 @@ namespace Projeto
             {
                 dataGridView1.DataSource = Produto.ListaProdutos;
             }
+            else if(rdbTeste3.Checked)
+            {
+                Teste form = new Teste();
+                form.ShowDialog();
+            }
+
         }
     }
 }
