@@ -161,31 +161,31 @@ namespace Projeto
         {
             if (cbxCategoria.Text == "Roupas")
             {
-                MostrarRoupa();
                 EsconderEletro();
                 EsconderLivro();
                 EsconderBrinq();
+                MostrarRoupa();
             }
             else if (cbxCategoria.Text == "Eletrodomesticos")
             {
-                MostrarEletro();
                 EsconderRoupa();
                 EsconderLivro();
                 EsconderBrinq();
+                MostrarEletro();
             }
             else if (cbxCategoria.Text == "Livros")
             {
-                MostrarLivro();
                 EsconderRoupa();
                 EsconderEletro();
                 EsconderBrinq();
+                MostrarLivro();
             }
             else if(cbxCategoria.Text == "Brinquedos")
             {
-                MostrarBrinq();
                 EsconderRoupa();
                 EsconderEletro();
                 EsconderLivro();
+                MostrarBrinq();
             }
         }
 
