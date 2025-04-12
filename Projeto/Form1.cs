@@ -21,11 +21,11 @@ namespace Projeto
         {
             if (rdb_teste1.Checked == true)
             {
-                dataGridView1.DataSource = Pessoa.ListaPessoas;
+                dataGridView1.DataSource = Livros.ListaLivros;
             }
             else if (rdbTeste2.Checked == true)
             {
-                dataGridView1.DataSource = Produto.ListaProdutos;
+                dataGridView1.DataSource = Brinquedo.ListaBrinquedos;
             }
             else if(rdbTeste3.Checked)
             {
