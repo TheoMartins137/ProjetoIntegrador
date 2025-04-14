@@ -122,6 +122,7 @@ namespace Projeto
             Cadastro form = new Cadastro();
             form.ShowDialog();
         }
+
         
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
