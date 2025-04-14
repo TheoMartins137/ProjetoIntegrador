@@ -8,7 +8,7 @@ namespace Projeto
 {
     public class Brinquedo
     {
-        public Brinquedo(int? id, string? nome, string? descricao, string? tipo, string? faixaetaria, string? tamanho)
+        public Brinquedo(string? id, string? nome, string? descricao, string? tipo, string? faixaetaria, string? tamanho)
         {
             this.id = id;
             this.nome = nome;
@@ -20,7 +20,7 @@ namespace Projeto
 
         public Brinquedo() { }
 
-        public int? id { get; set; }
+        public string? id { get; set; }
         public string? nome { get; set; }
         public string? descricao { get; set; }
         public string? tipo { get; set; }

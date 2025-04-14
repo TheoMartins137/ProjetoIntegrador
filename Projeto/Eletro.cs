@@ -8,7 +8,7 @@ namespace Projeto
 {
     public class Eletro
     {
-        public Eletro(int? id, string? nome, string? descricao, string? tipo, string? voltagem)
+        public Eletro(string? id, string? nome, string? descricao, string? tipo, string? voltagem)
         {
             this.id = id;
             this.nome = nome;
@@ -19,7 +19,7 @@ namespace Projeto
 
         public Eletro() { }
 
-        public int? id {  get; set; }
+        public string? id {  get; set; }
         public string? nome {  get; set; }
         public string? descricao {  get; set; }
         public string? tipo {  get; set; }

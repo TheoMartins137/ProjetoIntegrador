@@ -8,7 +8,7 @@ namespace Projeto
 {
     public class Livros
     {
-        public Livros(int? id, string? nome, string? genero, string? estado, string? descricao)
+        public Livros(string? id, string? nome, string? genero, string? estado, string? descricao)
         {
             this.id = id;
             this.nome = nome;
@@ -19,7 +19,7 @@ namespace Projeto
 
         public Livros () { }
 
-        public int? id { get; set; }
+        public string? id { get; set; }
         public string? nome { get; set; }
         public string? genero{ get; set; }
         public string? estado { get; set; }

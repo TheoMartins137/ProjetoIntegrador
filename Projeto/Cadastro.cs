@@ -151,10 +151,99 @@ namespace Projeto
             }
         }
 
+        public void LimparTudo()
+        {
+            var controles = new Control[]
+            {
+                txtBrinqNome, txtEletroNome, txtLivroNome, txtRoupaDesc, txtRoupaId, txtRoupaNome, rdbEletroTipo,
+                cbxBrinqIdade, cbxBrinqTipo, cbxBrinqTmn, cbxEletroVolt, cbxLivroEstado, cbxLivroGenero,
+                cbxRoupaGnr, cbxRoupaTipo, cbxRoupaTmn
+            };
+            foreach (var controle in controles)
+            {
+                if (controle is TextBox)
+                {
+                    ((TextBox)controle).Clear();
+                }
+                else if (controle is ComboBox)
+                {
+                    ((ComboBox)controle).SelectedIndex = -1;
+                }
+            }
+        }
+
+        public void Erro(string Mensagem)
+        {
+            MessageBox.Show(Mensagem, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void btnCadastro_Click(object sender, EventArgs e)
         {
 
+            if (cbxCategoria.Text == "Roupas")
+            {
 
+                Roupa roupa = new Roupa();
+
+                roupa.id = txtRoupaNome.Text;
+                roupa.nome = txtRoupaNome.Text;
+                roupa.descricao = txtRoupaDesc.Text;
+                roupa.tamanho = cbxRoupaTmn.Text;
+                roupa.genero = cbxRoupaGnr.Text;
+                roupa.tipo = cbxRoupaTipo.Text;
+
+                Roupa.ListaRoupa.Add(roupa);
+
+                LimparTudo();
+            }
+            else if (cbxCategoria.Text == "Eletrodomesticos")
+            {
+
+                Eletro eletro = new Eletro();
+
+                eletro.id = txtRoupaId.Text;
+                eletro.nome = txtEletroNome.Text;
+                eletro.descricao = txtRoupaDesc.Text;
+                eletro.tipo = rdbEletroTipo.Text;
+                eletro.voltagem = cbxEletroVolt.Text;
+
+                Eletro.ListaEletro.Add(eletro);
+                LimparTudo();
+
+            }
+            else if (cbxCategoria.Text == "Livros")
+            {
+
+
+                Livros livro = new Livros();
+
+                livro.id = txtRoupaId.Text;
+                livro.nome = txtRoupaNome.Text;
+                livro.genero = cbxLivroGenero.Text;
+                livro.estado = cbxLivroEstado.Text;
+                livro.descricao = txtRoupaDesc.Text;
+
+                Livros.ListaLivros.Add(livro);
+
+                LimparTudo();
+
+            }
+            else if (cbxCategoria.Text == "Brinquedos")
+            {
+
+                Brinquedo brinquedo = new Brinquedo();
+
+                brinquedo.id = txtRoupaId.Text;
+                brinquedo.nome = txtBrinqNome.Text;
+                brinquedo.descricao = txtRoupaDesc.Text;
+                brinquedo.tipo = cbxBrinqTipo.Text;
+                brinquedo.faixaetaria = cbxBrinqIdade.Text;
+                brinquedo.tamanho = cbxBrinqTmn.Text;
+
+                Brinquedo.ListaBrinquedos.Add(brinquedo);
+                LimparTudo();
+
+            }
         }
 
         private void brn_confirmar_Click(object sender, EventArgs e)
@@ -180,7 +269,7 @@ namespace Projeto
                 EsconderBrinq();
                 MostrarLivro();
             }
-            else if(cbxCategoria.Text == "Brinquedos")
+            else if (cbxCategoria.Text == "Brinquedos")
             {
                 EsconderRoupa();
                 EsconderEletro();
@@ -189,14 +278,8 @@ namespace Projeto
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void Cadastro_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblLivroDesc_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

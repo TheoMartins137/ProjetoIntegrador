@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            rdb_teste1 = new RadioButton();
-            groupBox1 = new GroupBox();
-            rdbTeste4 = new RadioButton();
-            rdbTeste3 = new RadioButton();
-            rdbTeste2 = new RadioButton();
             btnCadastro = new Button();
             btnAtualizar = new Button();
+            cbxCategoria = new ComboBox();
+            cbxRoupaGnr = new ComboBox();
+            cbxRoupaTmn = new ComboBox();
+            cbxRoupaTipo = new ComboBox();
+            lblProcurar = new Label();
+            cbxEletroTipo = new ComboBox();
+            cbxEletroVolt = new ComboBox();
+            cbxLivroGnr = new ComboBox();
+            cbxLivroEstado = new ComboBox();
+            cbxBrinqTipo = new ComboBox();
+            cbxBrinqIdade = new ComboBox();
+            cbxBrinqTmn = new ComboBox();
+            lblPesquisa = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -46,66 +53,8 @@
             dataGridView1.Location = new Point(12, 108);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(920, 433);
+            dataGridView1.Size = new Size(948, 433);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // rdb_teste1
-            // 
-            rdb_teste1.AutoSize = true;
-            rdb_teste1.Location = new Point(6, 26);
-            rdb_teste1.Name = "rdb_teste1";
-            rdb_teste1.Size = new Size(72, 24);
-            rdb_teste1.TabIndex = 1;
-            rdb_teste1.TabStop = true;
-            rdb_teste1.Text = "Teste1";
-            rdb_teste1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(rdbTeste4);
-            groupBox1.Controls.Add(rdbTeste3);
-            groupBox1.Controls.Add(rdbTeste2);
-            groupBox1.Controls.Add(rdb_teste1);
-            groupBox1.Location = new Point(390, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(250, 90);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            // 
-            // rdbTeste4
-            // 
-            rdbTeste4.AutoSize = true;
-            rdbTeste4.Location = new Point(127, 56);
-            rdbTeste4.Name = "rdbTeste4";
-            rdbTeste4.Size = new Size(72, 24);
-            rdbTeste4.TabIndex = 5;
-            rdbTeste4.TabStop = true;
-            rdbTeste4.Text = "Teste4";
-            rdbTeste4.UseVisualStyleBackColor = true;
-            // 
-            // rdbTeste3
-            // 
-            rdbTeste3.AutoSize = true;
-            rdbTeste3.Location = new Point(127, 26);
-            rdbTeste3.Name = "rdbTeste3";
-            rdbTeste3.Size = new Size(72, 24);
-            rdbTeste3.TabIndex = 4;
-            rdbTeste3.TabStop = true;
-            rdbTeste3.Text = "Teste3";
-            rdbTeste3.UseVisualStyleBackColor = true;
-            // 
-            // rdbTeste2
-            // 
-            rdbTeste2.AutoSize = true;
-            rdbTeste2.Location = new Point(6, 60);
-            rdbTeste2.Name = "rdbTeste2";
-            rdbTeste2.Size = new Size(72, 24);
-            rdbTeste2.TabIndex = 3;
-            rdbTeste2.TabStop = true;
-            rdbTeste2.Text = "Teste2";
-            rdbTeste2.UseVisualStyleBackColor = true;
             // 
             // btnCadastro
             // 
@@ -119,40 +68,213 @@
             // 
             // btnAtualizar
             // 
-            btnAtualizar.Location = new Point(815, 26);
+            btnAtualizar.Location = new Point(809, 20);
             btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.Size = new Size(117, 66);
+            btnAtualizar.Size = new Size(151, 38);
             btnAtualizar.TabIndex = 4;
-            btnAtualizar.Text = "Atualizar";
+            btnAtualizar.Text = "Procurar";
             btnAtualizar.UseVisualStyleBackColor = true;
             btnAtualizar.Click += btnAtualizar_Click;
+            // 
+            // cbxCategoria
+            // 
+            cbxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxCategoria.FormattingEnabled = true;
+            cbxCategoria.Items.AddRange(new object[] { "Roupas", "Eletrodomesticos", "Livros", "Brinquedos" });
+            cbxCategoria.Location = new Point(495, 30);
+            cbxCategoria.Name = "cbxCategoria";
+            cbxCategoria.Size = new Size(151, 28);
+            cbxCategoria.TabIndex = 5;
+            // 
+            // cbxRoupaGnr
+            // 
+            cbxRoupaGnr.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRoupaGnr.Enabled = false;
+            cbxRoupaGnr.FormattingEnabled = true;
+            cbxRoupaGnr.Items.AddRange(new object[] { "Masculino", "Feminino", "Infantil" });
+            cbxRoupaGnr.Location = new Point(495, 64);
+            cbxRoupaGnr.Name = "cbxRoupaGnr";
+            cbxRoupaGnr.Size = new Size(151, 28);
+            cbxRoupaGnr.TabIndex = 6;
+            cbxRoupaGnr.Visible = false;
+            // 
+            // cbxRoupaTmn
+            // 
+            cbxRoupaTmn.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRoupaTmn.Enabled = false;
+            cbxRoupaTmn.FormattingEnabled = true;
+            cbxRoupaTmn.Items.AddRange(new object[] { "PP", "P", "M", "G", "GG" });
+            cbxRoupaTmn.Location = new Point(652, 64);
+            cbxRoupaTmn.Name = "cbxRoupaTmn";
+            cbxRoupaTmn.Size = new Size(151, 28);
+            cbxRoupaTmn.TabIndex = 7;
+            cbxRoupaTmn.Visible = false;
+            // 
+            // cbxRoupaTipo
+            // 
+            cbxRoupaTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxRoupaTipo.Enabled = false;
+            cbxRoupaTipo.FormattingEnabled = true;
+            cbxRoupaTipo.Items.AddRange(new object[] { "Camiseta", "Calça", "Bermuda", "Vestido", "Blusa", "Roupa Íntima" });
+            cbxRoupaTipo.Location = new Point(809, 64);
+            cbxRoupaTipo.Name = "cbxRoupaTipo";
+            cbxRoupaTipo.Size = new Size(151, 28);
+            cbxRoupaTipo.TabIndex = 8;
+            cbxRoupaTipo.Visible = false;
+            // 
+            // lblProcurar
+            // 
+            lblProcurar.AutoSize = true;
+            lblProcurar.Location = new Point(182, 33);
+            lblProcurar.Name = "lblProcurar";
+            lblProcurar.Size = new Size(307, 20);
+            lblProcurar.TabIndex = 9;
+            lblProcurar.Text = "Selecione o tipo de produto para a pesquisa:";
+            // 
+            // cbxEletroTipo
+            // 
+            cbxEletroTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxEletroTipo.Enabled = false;
+            cbxEletroTipo.FormattingEnabled = true;
+            cbxEletroTipo.Items.AddRange(new object[] { "Geladeira", "Fogão", "Máquina de lavar", "Televisão", "Liquidificador", "Batedeira", "Aspirador", "Ventilador" });
+            cbxEletroTipo.Location = new Point(495, 64);
+            cbxEletroTipo.Name = "cbxEletroTipo";
+            cbxEletroTipo.Size = new Size(151, 28);
+            cbxEletroTipo.TabIndex = 10;
+            cbxEletroTipo.Visible = false;
+            // 
+            // cbxEletroVolt
+            // 
+            cbxEletroVolt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxEletroVolt.Enabled = false;
+            cbxEletroVolt.FormattingEnabled = true;
+            cbxEletroVolt.Items.AddRange(new object[] { "110V", "220V", "Bivolt" });
+            cbxEletroVolt.Location = new Point(652, 64);
+            cbxEletroVolt.Name = "cbxEletroVolt";
+            cbxEletroVolt.Size = new Size(151, 28);
+            cbxEletroVolt.TabIndex = 11;
+            cbxEletroVolt.Visible = false;
+            // 
+            // cbxLivroGnr
+            // 
+            cbxLivroGnr.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxLivroGnr.Enabled = false;
+            cbxLivroGnr.FormattingEnabled = true;
+            cbxLivroGnr.Items.AddRange(new object[] { "Escolar", "Historia", "Ficção Científica", "Religioso", "Poesia", "Infantil", "Contos" });
+            cbxLivroGnr.Location = new Point(495, 64);
+            cbxLivroGnr.Name = "cbxLivroGnr";
+            cbxLivroGnr.Size = new Size(151, 28);
+            cbxLivroGnr.TabIndex = 12;
+            cbxLivroGnr.Visible = false;
+            // 
+            // cbxLivroEstado
+            // 
+            cbxLivroEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxLivroEstado.Enabled = false;
+            cbxLivroEstado.FormattingEnabled = true;
+            cbxLivroEstado.Items.AddRange(new object[] { "Novo", "Semi-novo", "Usado", "Bem usado", "Destruído" });
+            cbxLivroEstado.Location = new Point(652, 64);
+            cbxLivroEstado.Name = "cbxLivroEstado";
+            cbxLivroEstado.Size = new Size(151, 28);
+            cbxLivroEstado.TabIndex = 13;
+            cbxLivroEstado.Visible = false;
+            // 
+            // cbxBrinqTipo
+            // 
+            cbxBrinqTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxBrinqTipo.Enabled = false;
+            cbxBrinqTipo.FormattingEnabled = true;
+            cbxBrinqTipo.Items.AddRange(new object[] { "Educativo", "Musical", "Eletrônico", "Criativo", "Esporte", "Tabuleiro", "Cartas", "Construção", "Veículos", "Bonecos" });
+            cbxBrinqTipo.Location = new Point(495, 64);
+            cbxBrinqTipo.Name = "cbxBrinqTipo";
+            cbxBrinqTipo.Size = new Size(151, 28);
+            cbxBrinqTipo.TabIndex = 14;
+            cbxBrinqTipo.Visible = false;
+            // 
+            // cbxBrinqIdade
+            // 
+            cbxBrinqIdade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxBrinqIdade.Enabled = false;
+            cbxBrinqIdade.FormattingEnabled = true;
+            cbxBrinqIdade.Items.AddRange(new object[] { "0 - 12 Meses", "1 - 3 Anos", "4 - 6 Anos", "1 - 12 Anos", "13+ Anos" });
+            cbxBrinqIdade.Location = new Point(652, 64);
+            cbxBrinqIdade.Name = "cbxBrinqIdade";
+            cbxBrinqIdade.Size = new Size(151, 28);
+            cbxBrinqIdade.TabIndex = 15;
+            cbxBrinqIdade.Visible = false;
+            // 
+            // cbxBrinqTmn
+            // 
+            cbxBrinqTmn.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxBrinqTmn.Enabled = false;
+            cbxBrinqTmn.FormattingEnabled = true;
+            cbxBrinqTmn.Items.AddRange(new object[] { "Pequeno (Portátil)", "Médio", "Grande(Uso ao ar livre ou ocupa muito espaço)" });
+            cbxBrinqTmn.Location = new Point(809, 64);
+            cbxBrinqTmn.Name = "cbxBrinqTmn";
+            cbxBrinqTmn.Size = new Size(151, 28);
+            cbxBrinqTmn.TabIndex = 16;
+            cbxBrinqTmn.Visible = false;
+            // 
+            // lblPesquisa
+            // 
+            lblPesquisa.AutoSize = true;
+            lblPesquisa.Enabled = false;
+            lblPesquisa.Location = new Point(340, 67);
+            lblPesquisa.Name = "lblPesquisa";
+            lblPesquisa.Size = new Size(149, 20);
+            lblPesquisa.TabIndex = 17;
+            lblPesquisa.Text = "Oriente sua pesquisa:";
+            lblPesquisa.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(944, 553);
+            ClientSize = new Size(972, 553);
+            Controls.Add(lblPesquisa);
+            Controls.Add(cbxBrinqTmn);
+            Controls.Add(cbxBrinqIdade);
+            Controls.Add(cbxBrinqTipo);
+            Controls.Add(cbxLivroEstado);
+            Controls.Add(cbxLivroGnr);
+            Controls.Add(cbxEletroVolt);
+            Controls.Add(cbxEletroTipo);
+            Controls.Add(lblProcurar);
+            Controls.Add(cbxRoupaTipo);
+            Controls.Add(cbxRoupaTmn);
+            Controls.Add(cbxRoupaGnr);
+            Controls.Add(cbxCategoria);
             Controls.Add(btnAtualizar);
             Controls.Add(btnCadastro);
-            Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private RadioButton rdb_teste1;
-        private GroupBox groupBox1;
-        private RadioButton rdbTeste4;
-        private RadioButton rdbTeste3;
-        private RadioButton rdbTeste2;
         private Button btnCadastro;
         private Button btnAtualizar;
+        private ComboBox cbxCategoria;
+        private ComboBox cbxRoupaGnr;
+        private ComboBox cbxRoupaTmn;
+        private ComboBox cbxRoupaTipo;
+        private Label lblProcurar;
+        private ComboBox cbxEletroTipo;
+        private ComboBox cbxEletroVolt;
+        private ComboBox cbxLivroGnr;
+        private ComboBox cbxLivroEstado;
+        private ComboBox cbxBrinqTipo;
+        private ComboBox cbxBrinqIdade;
+        private ComboBox cbxBrinqTmn;
+        private Label lblPesquisa;
     }
 }

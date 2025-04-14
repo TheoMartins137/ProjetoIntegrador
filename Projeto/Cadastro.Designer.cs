@@ -445,8 +445,13 @@
             Controls.Add(brn_confirmar);
             Controls.Add(btnCadastro);
             Controls.Add(cbxCategoria);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
+            Load += Cadastro_Load;
             ResumeLayout(false);
             PerformLayout();
         }
