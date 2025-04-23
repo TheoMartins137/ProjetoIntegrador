@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Projeto
+﻿namespace Projeto
 {
     public class Eletro
     {
@@ -19,11 +13,11 @@ namespace Projeto
 
         public Eletro() { }
 
-        public string? id {  get; set; }
-        public string? nome {  get; set; }
-        public string? descricao {  get; set; }
-        public string? tipo {  get; set; }
-        public string? voltagem {  get; set; }
+        public string? id { get; set; }
+        public string? nome { get; set; }
+        public string? descricao { get; set; }
+        public string? tipo { get; set; }
+        public string? voltagem { get; set; }
 
         public static List<Eletro> ListaEletro = new List<Eletro>();
     }

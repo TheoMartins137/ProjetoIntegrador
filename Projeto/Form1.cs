@@ -123,7 +123,7 @@ namespace Projeto
             form.ShowDialog();
         }
 
-        
+
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             if (cbxCategoria.Text == "Roupas")
@@ -142,7 +142,7 @@ namespace Projeto
                 dataGridView1.DataSource = filtrados;
             }
 
-            else if(cbxCategoria.Text == "Eletrodomesticos")
+            else if (cbxCategoria.Text == "Eletrodomesticos")
             {
                 EsconderBrinq();
                 EsconderLivro();
@@ -155,7 +155,7 @@ namespace Projeto
                 (string.IsNullOrEmpty(tipo) || eletro.tipo == tipo)).ToList();
                 dataGridView1.DataSource = filtrados;
             }
-            else if(cbxCategoria.Text == "Livros")
+            else if (cbxCategoria.Text == "Livros")
             {
                 EsconderRoupa();
                 EsconderBrinq();
@@ -170,7 +170,7 @@ namespace Projeto
                 dataGridView1.DataSource = filtrados;
             }
 
-            else if(cbxCategoria.Text == "Brinquedos")
+            else if (cbxCategoria.Text == "Brinquedos")
             {
                 EsconderEletro();
                 EsconderLivro();
@@ -183,7 +183,7 @@ namespace Projeto
 
                 var filtrados = Brinquedo.ListaBrinquedos.Where(brinquedos => (string.IsNullOrEmpty(tipo) || brinquedos.tipo == tipo) &&
                 (string.IsNullOrEmpty(tamanho) || brinquedos.tamanho == tamanho) &&
-                (string.IsNullOrEmpty(idade) || brinquedos.faixaetaria == idade )).ToList();
+                (string.IsNullOrEmpty(idade) || brinquedos.faixaetaria == idade)).ToList();
                 dataGridView1.DataSource = filtrados;
             }
         }
