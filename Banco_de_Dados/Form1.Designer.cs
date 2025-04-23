@@ -34,7 +34,8 @@
             txtTelefone = new TextBox();
             lstLista = new ListView();
             btnPesquisa = new Button();
-            comboBox1 = new ComboBox();
+            cbxIdade = new ComboBox();
+            cbxGenero = new ComboBox();
             SuspendLayout();
             // 
             // btnCadastro
@@ -67,7 +68,7 @@
             // 
             txtTelefone.Location = new Point(65, 210);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.PlaceholderText = "Telefone:";
+            txtTelefone.PlaceholderText = "Gênero:";
             txtTelefone.Size = new Size(125, 27);
             txtTelefone.TabIndex = 3;
             // 
@@ -82,29 +83,41 @@
             // 
             // btnPesquisa
             // 
-            btnPesquisa.Location = new Point(742, 46);
+            btnPesquisa.Location = new Point(742, 47);
             btnPesquisa.Name = "btnPesquisa";
             btnPesquisa.Size = new Size(94, 29);
             btnPesquisa.TabIndex = 5;
             btnPesquisa.Text = "Pesquisar";
             btnPesquisa.UseVisualStyleBackColor = true;
+            btnPesquisa.Click += btnPesquisa_Click;
             // 
-            // comboBox1
+            // cbxIdade
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Menor de 18 anos", "Maior de 18 anos" });
-            comboBox1.Location = new Point(585, 47);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 6;
+            cbxIdade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxIdade.FormattingEnabled = true;
+            cbxIdade.Items.AddRange(new object[] { "Menor de 18 anos", "Maior de 18 anos" });
+            cbxIdade.Location = new Point(585, 47);
+            cbxIdade.Name = "cbxIdade";
+            cbxIdade.Size = new Size(151, 28);
+            cbxIdade.TabIndex = 6;
+            // 
+            // cbxGenero
+            // 
+            cbxGenero.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxGenero.FormattingEnabled = true;
+            cbxGenero.Items.AddRange(new object[] { "Masculino", "Feminino" });
+            cbxGenero.Location = new Point(428, 47);
+            cbxGenero.Name = "cbxGenero";
+            cbxGenero.Size = new Size(151, 28);
+            cbxGenero.TabIndex = 7;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1258, 417);
-            Controls.Add(comboBox1);
+            Controls.Add(cbxGenero);
+            Controls.Add(cbxIdade);
             Controls.Add(btnPesquisa);
             Controls.Add(lstLista);
             Controls.Add(txtTelefone);
@@ -125,6 +138,7 @@
         private TextBox txtTelefone;
         private ListView lstLista;
         private Button btnPesquisa;
-        private ComboBox comboBox1;
+        private ComboBox cbxIdade;
+        private ComboBox cbxGenero;
     }
 }

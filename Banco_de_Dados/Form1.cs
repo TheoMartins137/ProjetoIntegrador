@@ -24,7 +24,7 @@ namespace Banco_de_Dados
             lstLista.Columns.Add("ID", 30, HorizontalAlignment.Left);
             lstLista.Columns.Add("Nome", 150, HorizontalAlignment.Left);
             lstLista.Columns.Add("Idade", 150, HorizontalAlignment.Left);
-            lstLista.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
+            lstLista.Columns.Add("Genero", 150, HorizontalAlignment.Left);
 
             Carregar_Lista();
         }
@@ -44,12 +44,12 @@ namespace Banco_de_Dados
                 cmd.Connection = Conexao;
 
                 cmd.Parameters.Clear();
-                cmd.CommandText = "INSERT INTO pessoa(nome, idade, telefone)" +
-                                  "VALUES (@nome, @idade, @telefone)";
+                cmd.CommandText = "INSERT INTO pessoa(nome, idade, genero)" +
+                                  "VALUES (@nome, @idade, @genero)";
 
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("@idade", txtIdade.Text);
-                cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+                cmd.Parameters.AddWithValue("genero", txtTelefone.Text);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cadastro Realizado com sucesso");
@@ -69,7 +69,7 @@ namespace Banco_de_Dados
             {
                 Conexao.Close();
             }
-                
+
         }
 
         private void Carregar_Lista()
@@ -100,6 +100,65 @@ namespace Banco_de_Dados
                     lstLista.Items.Add(linha_list_view);
 
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexao.Close();
+            }
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Conexao = new MySqlConnection(data_source);
+                Conexao.Open();
+
+                String sql = "SELECT * FROM pessoa WHERE 1=1";
+
+                if(cbxGenero.SelectedItem != null)
+                {
+                    sql += " AND genero = @genero";
+                }
+                if(cbxIdade.Text == "Menor de 18 anos")
+                {
+                    sql += " AND idade < 18";
+                }
+                if(cbxIdade.Text == "Maior de 18 anos")
+                {
+                    sql += " And idade >= 18";
+                }
+
+                sql += " ORDER BY id ASC";
+
+                MySqlCommand buscar = new MySqlCommand(sql, Conexao);
+
+                if (cbxGenero.SelectedItem != null)
+                {
+                    buscar.Parameters.AddWithValue("@genero", cbxGenero.SelectedItem.ToString());
+                }
+
+                MySqlDataReader reader = buscar.ExecuteReader();
+                lstLista.Items.Clear();
+
+                while (reader.Read())
+                {
+                    string[] row =
+                    {
+                    reader.GetInt32(0).ToString(),
+                    reader.GetString(1),
+                    reader.GetString(2),
+                    reader.GetString(3)
+                    };
+
+                    var linha_list_view = new ListViewItem(row);
+                    lstLista.Items.Add(linha_list_view);
+                }
+
             }
             catch (Exception ex)
             {
